@@ -1,5 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { forkJoin, of } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 import { MarvelService } from 'src/app/resources/marvel.service';
 
 @Component({
@@ -14,7 +17,8 @@ export class HeroesComponent implements OnInit {
   public loading: boolean = false;
 
   constructor(
-    protected $marvelService: MarvelService
+    protected $marvelService: MarvelService,
+    protected $router: Router
   ) { }
 
   ngOnInit(): void {
@@ -25,19 +29,54 @@ export class HeroesComponent implements OnInit {
 
   getHeroes() {
 
+    //HTTP REQUEST PARA CHAMADAS SEQUENCIAIS USANDO RXJS
+
     this.loading = true;
 
-    this.$marvelService.getHeroes(this.numberOfHeroes).subscribe((res: any) => {
-      this.heroesList = res['data']['results'];
+    const res1$ = this.$marvelService.getHeroes(this.numberOfHeroes).pipe(
+      catchError(error => of(error))
+    );
+
+    forkJoin([res1$]).subscribe((res: any) => {
+
+      this.heroesList = res[0]['data']['results'];
 
       console.log("heroeslist", this.heroesList);
       this.loading = false;
+
     },
       (error) => {
         console.log("Ocorreu um erro ao buscar os heróis.", error);
-        alert("Ocorreu um erro ao buscar os heróis. Favor entre em contato com o administrador.")
+        alert("Ocorreu um erro ao buscar os heróis. Favor entre em contato com o administrador.");
         this.loading = false;
       })
+
+
+
+    //HTTP REQUEST PADRAO
+
+    // this.$marvelService.getHeroes(this.numberOfHeroes).subscribe((res: any) => {
+    //   this.heroesList = res['data']['results'];
+
+    //   console.log("heroeslist", this.heroesList);
+    //   this.loading = false;
+    // },
+    //   (error) => {
+    //     console.log("Ocorreu um erro ao buscar os heróis.", error);
+    //     alert("Ocorreu um erro ao buscar os heróis. Favor entre em contato com o administrador.")
+    //     this.loading = false;
+    //   })
+  }
+
+  getHeroId($event: number) {
+
+    let idBase64 = btoa($event.toString());
+
+    this.$router.navigate(['heroes/details'], {
+      queryParams: {
+        hero_id: idBase64
+      }
+    });
   }
 
 }

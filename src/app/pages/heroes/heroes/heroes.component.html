@@ -1,29 +1,4 @@
 <app-loader *ngIf="loading"> </app-loader>
+<app-heroes-card (heroId)="getHeroId($event)" [heroesList]="heroesList" *ngIf="heroesList?.length > 0 && !loading"></app-heroes-card>
+<app-empty-state *ngIf="heroesList?.length === 0 && !loading"></app-empty-state>
 
-
-<div *ngIf="heroesList?.length > 0 && !loading">
-
-  <div class="d-flex f-wrap">
-
-
-    <ng-container *ngFor="let heroes of heroesList">
-
-        <div class="card-heroes">
-          <img class="m-auto d-flex w100" [src]="heroes.thumbnail.path+'.'+heroes.thumbnail.extension">
-        </div>
-
-    </ng-container>
-  </div>
-
-
-</div>
-
-
-
-<div class="center-div" *ngIf="heroesList?.length == 0 && !loading">
-
-  <div class="card">
-    <h2>Não existem heróis a serem exibidos.</h2>
-  </div>
-
-</div>

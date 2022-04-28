@@ -1,1 +1,28 @@
-<p>heroes-card works!</p>
+
+  <div class="d-flex f-wrap justify-center">
+    <ng-container *ngFor="let heroes of heroesList">
+
+
+      <div class="card-heroes text-center">
+        <div style="padding-bottom: 10px;">
+          <span>ID: {{heroes.id}}</span>
+
+        </div>
+
+        <img class="m-auto d-flex w100 h100" [src]="heroes.thumbnail.path+'.'+heroes.thumbnail.extension">
+
+        <div style="margin-top: 10px; height: 45px; text-overflow: ellipsis;">
+          <span >Nome: {{heroes.name}}</span><br>
+        </div>
+
+        <div class="btn-footer">
+          <button class="marvel-btn" (click)="readMore(heroes.id)">Ler Mais</button>
+        </div>
+
+      </div>
+
+
+  </ng-container>
+
+
+  </div>

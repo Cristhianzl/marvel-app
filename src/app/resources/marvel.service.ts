@@ -15,4 +15,8 @@ export class MarvelService {
     return this.$http.get(`${environment.api.baseUrl}/v1/public/characters?limit=${limit}&apikey=${environment.api.apikey}`);
   }
 
+  public getHeroDetail(id: number) {
+    return this.$http.get(`${environment.api.baseUrl}/v1/public/characters/${id}?apikey=${environment.api.apikey}`);
+  }
+
 }
