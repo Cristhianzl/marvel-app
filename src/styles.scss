@@ -1,0 +1,48 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+  padding: 0px !important;
+  margin: 0px !important;
+}
+
+span, li, ul{
+  font-family: sans-serif;
+}
+
+
+//BOOTSTRAP MANUAL
+
+.text-center{
+  text-align: center;
+}
+
+.self-center{
+  align-self: center;
+}
+
+.d-flex{
+  display: flex;
+}
+
+.d-grid{
+  display: grid;
+}
+
+.f18{
+  font-size: 18px;
+}
+
+.f16{
+  font-size: 16px;
+}
+
+.float-l{
+  float: left;
+}
+.float-r{
+  float: right;
+}
+
+.w-150{
+  width: 150px;
+}
+
