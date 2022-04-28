@@ -5,7 +5,7 @@ body{
   background-color: #ffefef;
 }
 
-span, li, ul, a, p{
+h1, h2, h3, span, li, ul, a, p, button{
   font-family: sans-serif;
 }
 
@@ -63,6 +63,11 @@ span, li, ul, a, p{
   margin-right: 10px !important;
 }
 
+.m-auto{
+  margin: auto !important;
+}
+
+
 .card {
   border-radius: 5px;
   box-shadow: 7px 7px 13px 0px rgba(50, 50, 50, 0.22);
@@ -71,3 +76,26 @@ span, li, ul, a, p{
   width: 400px;
   transition: all 0.3s ease-out;
 }
+
+
+.center-div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+.marvel-btn{
+  transition-duration: 0.4s;
+  padding: 5px 20px;
+    background: #ffdada;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.marvel-btn:hover {
+  color: rgb(90, 25, 25);
+
+}
+
