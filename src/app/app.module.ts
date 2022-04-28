@@ -8,6 +8,9 @@ import { FooterComponent } from './nav/footer/footer.component';
 import { HomeComponent } from './nav/home/home.component';
 import { NotFoundComponent } from './nav/not-found/not-found.component';
 
+import { HttpClientModule } from '@angular/common/http';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +21,8 @@ import { NotFoundComponent } from './nav/not-found/not-found.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    HttpClientModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

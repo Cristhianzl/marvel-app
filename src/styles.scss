@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 body{
-  padding: 0px !important;
+  padding: 0px 0px 50px 0px !important;
   margin: 0px !important;
   background-color: #ffefef;
 }
@@ -26,6 +26,10 @@ h1, h2, h3, span, li, ul, a, p, button{
 
 .d-grid{
   display: grid !important;
+}
+
+.f-wrap{
+  flex-wrap: wrap;
 }
 
 .f18{
@@ -67,6 +71,10 @@ h1, h2, h3, span, li, ul, a, p, button{
   margin: auto !important;
 }
 
+.w100{
+  width: 100px;
+}
+
 
 .card {
   border-radius: 5px;
@@ -74,6 +82,16 @@ h1, h2, h3, span, li, ul, a, p, button{
   padding: 30px;
   margin: 20px;
   width: 400px;
+  transition: all 0.3s ease-out;
+}
+
+.card-heroes {
+  border-radius: 5px;
+  box-shadow: 7px 7px 13px 0px rgba(50, 50, 50, 0.22);
+  padding: 30px;
+  margin: 20px;
+  width: 150px;
+  height: 200px;
   transition: all 0.3s ease-out;
 }
 

@@ -12,7 +12,16 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
+    data: { headerTitle: 'Início' }
   },
+
+  {
+    path: 'heroes',
+    loadChildren:
+      () => import('src/app/pages/heroes/heroes.module').then(m => m.HeroesModule)
+  },
+
+
   { path: '404', component: NotFoundComponent },
   { path: '**', redirectTo: '/404' },
 ];
