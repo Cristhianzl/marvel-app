@@ -2,9 +2,10 @@
 body{
   padding: 0px !important;
   margin: 0px !important;
+  background-color: #ffefef;
 }
 
-span, li, ul{
+span, li, ul, a, p{
   font-family: sans-serif;
 }
 
@@ -12,19 +13,19 @@ span, li, ul{
 //BOOTSTRAP MANUAL
 
 .text-center{
-  text-align: center;
+  text-align: center !important;
 }
 
 .self-center{
-  align-self: center;
+  align-self: center !important;
 }
 
 .d-flex{
-  display: flex;
+  display: flex !important;
 }
 
 .d-grid{
-  display: grid;
+  display: grid !important;
 }
 
 .f18{
@@ -42,7 +43,31 @@ span, li, ul{
   float: right;
 }
 
-.w-150{
-  width: 150px;
+.w-120{
+  width: 120px;
 }
 
+.mr-1{
+  margin-right: 5px !important;
+}
+
+.mr-2{
+  margin-right: 10px !important;
+}
+
+.ml-1{
+  margin-right: 5px !important;
+}
+
+.ml-2{
+  margin-right: 10px !important;
+}
+
+.card {
+  border-radius: 5px;
+  box-shadow: 7px 7px 13px 0px rgba(50, 50, 50, 0.22);
+  padding: 30px;
+  margin: 20px;
+  width: 400px;
+  transition: all 0.3s ease-out;
+}
