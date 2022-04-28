@@ -3,7 +3,7 @@
     <ng-container *ngFor="let heroes of heroesList">
 
 
-      <div class="card-heroes text-center">
+      <div  [ngClass]="isSearch ? 'card-heroes-search text-center' : 'card-heroes text-center'"  class="">
         <div style="padding-bottom: 10px;">
           <span>ID: {{heroes.id}}</span>
 
@@ -15,7 +15,7 @@
           <span >Nome: {{heroes.name}}</span><br>
         </div>
 
-        <div class="btn-footer">
+        <div class="btn-footer" *ngIf="!isSearch">
           <button class="marvel-btn" (click)="readMore(heroes.id)">Ler Mais</button>
         </div>
 

@@ -8,6 +8,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class HeroesCardComponent implements OnInit {
 
   @Input() public heroesList: any;
+  @Input() public isSearch: boolean = false;
   @Output() public heroId: EventEmitter<number> = new EventEmitter<number>();
 
   constructor() { }

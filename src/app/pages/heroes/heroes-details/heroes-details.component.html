@@ -2,19 +2,19 @@
 
 <div class="card-profile text-center m-auto" *ngIf="!loading">
   <div style="padding-bottom: 10px;">
-    <span>ID: {{heroProfile.id}}</span>
+    <span>ID: {{heroProfile?.id}}</span>
 
   </div>
 
-  <img loading="lazy" class="m-auto d-flex w300 h300" [src]="heroProfile.thumbnail.path+'.'+heroProfile.thumbnail.extension">
+  <img loading="lazy" class="m-auto d-flex w300 h300" [src]="heroProfile?.thumbnail.path+'.'+heroProfile?.thumbnail.extension">
 
   <div style="margin-top: 10px; height: 45px;">
-    <span >Nome: {{heroProfile.name}}</span><br>
+    <span >Nome: {{heroProfile?.name}}</span><br>
   </div>
 
   <div style="width: 60vw; text-align: center; margin: auto;">
     <span>
-      {{heroProfile.description != "" ? heroProfile.description : 'Herói sem descrição.'}}
+      {{heroProfile?.description != "" ? heroProfile?.description : 'Herói sem descrição.'}}
     </span>
   </div>
 
