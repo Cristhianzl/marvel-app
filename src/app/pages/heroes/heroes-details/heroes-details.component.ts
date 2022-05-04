@@ -36,11 +36,23 @@ export class HeroesDetailsComponent implements OnInit {
   }
 
   getHeroDetail() {
+
     this.loading = true;
+
+
+    // this.$marvelService.getHeroDetailRx(this.heroId).subscribe((hero: any) => {
+    //   console.log("heroProfile", hero)
+    //   this.loading = false;
+    // },
+    //   (error) => {
+    //     console.log("Ocorreu um erro ao buscar o detalhe do herói.", error);
+    //     alert("Ocorreu um erro ao buscar o detalhe do herói. Favor entre em contato com o administrador.")
+    //     this.loading = false;
+    //   });
+
 
     this.$marvelService.getHeroDetail(this.heroId).subscribe((hero: any) => {
       this.heroProfile = hero['data']['results'][0];
-      console.log("heroProfile", this.heroProfile)
       this.loading = false;
 
     },
@@ -49,7 +61,6 @@ export class HeroesDetailsComponent implements OnInit {
         alert("Ocorreu um erro ao buscar o detalhe do herói. Favor entre em contato com o administrador.")
         this.loading = false;
       });
-
   }
 
 }
